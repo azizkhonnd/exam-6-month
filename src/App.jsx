@@ -20,9 +20,8 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="cart" element={<Cart />} />
-          <Route path="" component={ProductDetail} />
-
         </Route>
+        <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
       <ToastContainer />
     </>
