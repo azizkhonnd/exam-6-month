@@ -1,0 +1,126 @@
+.header__container {
+    width: 100%;
+    background-color: #40BFFF;
+    height: 600px;
+    margin-top: 259px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero__img {
+    width: 794.564px;
+    height: 598.935px;
+    padding: 50px;
+    margin-top: -200px;
+    margin-left: 80px;
+}
+
+.sneakers__title {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 80px;
+    margin-left: 60px;
+    width: 130%;
+}
+
+.shop__item {
+    display: flex;
+    margin-top: 171px;
+}
+
+.sneakers__subtitle {
+    width: 160%;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 30px;
+    margin-left: 60px;
+}
+
+
+.shop__now__link {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 60px;
+}
+
+.shop__now__line {
+    width: 112px;
+    height: 3px;
+    background-color: #FFF;
+    margin-left: 60px;
+}
+
+
+
+.header__line {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 120px;
+}
+
+.header__cards {
+    margin-top: 242px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 120px;
+}
+
+.header__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 197.555px;
+    height: 96.318px;
+    text-align: center;
+}
+
+
+.h3__header__card {
+    color: #22262A;
+    font-family: Poppins;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.most__rated__header {
+    height: 294.436px;
+
+}
+
+.most__rated__products__header {
+    text-align: center;
+    margin-top: 335px;
+}
+
+.most__rated__title {
+    color: #22262A;
+    font-family: Poppins;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.header__cards__most {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 120px;
+    margin-top: 100px;
+}

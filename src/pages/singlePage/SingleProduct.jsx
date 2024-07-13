@@ -96,6 +96,7 @@ const ProductDetail = () => {
             </div>
             <div className="single__product__reviews">
                 <h2 className='rate__products'>{t('MOST TOP RATED PRODUCTS')}</h2>
+
             </div>
         </div>
     );

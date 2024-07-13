@@ -26,6 +26,35 @@
     font-weight: 600;
 }
 
+.show-more-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 29px auto;
+    background-color: transparent;
+    border: none;
+    color: #33A0FF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    min-height: auto;
+    margin-top: 55px;
+    cursor: pointer;
+    flex-direction: column;
+
+}
+
+.show__more__line {
+    min-width: 195px;
+    min-height: 3px;
+    background-color: #33A0FF;
+    margin: 0 auto;
+    margin-top: 5px;
+
+}
+
 .home__title {
     color: #22262A;
     font-size: 35px;
