@@ -1,16 +1,18 @@
 import { useState, useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import './SingleProduct.scss';
 import CartLogo from '../../routes/home/img/cart-shopping.svg';
 import Rate from '../../routes/home/img/rate.svg';
 import { CartContext } from '../../context/provider/CartContext';
 import { useTranslation } from 'react-i18next';
+import Heart from '../../routes/home/img/heart-button-svg.svg'
+import './SingleProduct.scss';
 
 const ProductDetail = () => {
     const { addToCart } = useContext(CartContext);
     const { t } = useTranslation();
     const [product, setProduct] = useState(null);
+    const [topRatedProducts, setTopRatedProducts] = useState([]);
     const [quantity, setQuantity] = useState(1);
     const { id } = useParams();
 
@@ -24,7 +26,18 @@ const ProductDetail = () => {
             }
         };
 
+        const fetchTopRatedProducts = async () => {
+            try {
+                const response = await axios.get('https://backend-e-commerce-production.up.railway.app/api/v1/products');
+                const filteredProducts = response.data.filter(product => product.rating >= 4); // Adjust the condition as per your rating system
+                setTopRatedProducts(filteredProducts);
+            } catch (error) {
+                console.error('Error fetching top-rated products:', error);
+            }
+        };
+
         fetchProduct();
+        fetchTopRatedProducts();
     }, [id]);
 
     if (!product) {
@@ -96,7 +109,35 @@ const ProductDetail = () => {
             </div>
             <div className="single__product__reviews">
                 <h2 className='rate__products'>{t('MOST TOP RATED PRODUCTS')}</h2>
-
+                <div className='product__list'>
+                    {topRatedProducts.map(topProduct => (
+                        <div key={topProduct.id} className='product__item'>
+                            <img src={topProduct.image} alt={topProduct.name} className='product__image' />
+                            <h2 className='product__name'>{topProduct.name}</h2>
+                            <div className="product__title__price">
+                                <p className='product__price'>${topProduct.price}</p>
+                                <p className='product__sale'>$534.33</p>
+                                <p className='product__sale__percent'>24% Off</p>
+                            </div>
+                            <img src={Rate} alt="rate" />
+                            <div className="product__get__buttons">
+                                <button
+                                    onClick={() => addToCart(topProduct)}
+                                    className='cart__button'
+                                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                                >
+                                    <img className="heart__img" style={{ width: '22px' }} src={CartLogo} alt="cart" />
+                                </button>
+                                <button
+                                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                                    className='cart__button__favorite'
+                                >
+                                    <img className="heart__img" style={{ width: '40px' }} src={Heart} alt="heart" />
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

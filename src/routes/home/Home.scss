@@ -67,17 +67,18 @@
 }
 
 .product__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 93px;
+   justify-content: center;
+   margin-top: 100px;
 }
 
 .product__item {
     border: 3px solid #F6F7F8;
     width: 298px;
-    height: 405px;
-    padding: 5px;
+    height: 465px;
+    padding: 15px;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
@@ -90,7 +91,7 @@
 
 .product__image {
     width: 214.5px;
-    height: 192.5px;
+    height: 213px;
     object-fit: cover;
 
 }
